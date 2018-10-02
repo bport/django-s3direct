@@ -98,12 +98,12 @@ def get_upload_params(request):
     url = None
 
     # Generate signed URL for private document access
-    if acl == "private":
-        url = get_signed_download_url(
-            key=key.replace("${filename}", filename),
-            bucket_name=bucket or settings.AWS_STORAGE_BUCKET_NAME,
-            ttl=int(5*60),  # 5 mins
-        )
+    # if acl == "private":
+    #    url = get_signed_download_url(
+    #        key=key.replace("${filename}", filename),
+    #        bucket_name=bucket or settings.AWS_STORAGE_BUCKET_NAME,
+    #        ttl=int(5*60),  # 5 mins
+    #    )
 
     response = {
         "aws_payload": data,
